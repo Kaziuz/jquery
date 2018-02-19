@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diferencia entre click y onclick</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <style>
+    li{
+      cursor: pointer;
+    }
+  </style>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+      // delcaación 1
+      $("ul").on("click", "li", function(){
+        alert( "hago click en: " + $(this).text() );
+      });
+      
+      /*
+      Con esta declaración no se me van a mostrar el contenido
+      de los aletrs de los li que se crean dinamicamente
+
+      se debe escribir con la declaración 1
+      $("li").click(function(){
+        alert( "hago click en: " + $(this).text() );
+      });
+      */
+
+      // se ejecuta cada vez que apreto el botón
+      $("#btnAdd").click(function(){
+
+        // capturamos el contenido de la última lista y 
+        // le hacemos una trampa (*1) para combertirlo en número
+        // y luego le sumamos uno
+        var nextNum = ( $("li:last").text()*1) + 1;
+
+        // capturamos la ul y le añadimos una li cuando apretemos el botómn con el conteo anterior
+        $("ul").append("<li>" + nextNum + "</li>");
+        // alert(nextNum);
+      });
+
+    });
+  </script>
+</head>
+<body>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>    
+  </ul>
+
+  <button id="btnAdd">Add</button>
+
+</body>
+</html>

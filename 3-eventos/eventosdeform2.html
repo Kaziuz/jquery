@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eventos para captuar datos de form</title>
+  <script src="jquery-3.3.1.min.js"></script>
+    <style>
+      div{
+        color:blue;
+        font-size: 20px;
+      }
+
+      #prueba{
+        color:green;
+        font-size: 34px;
+        margin-top: 50px;
+      }
+    </style>
+  <!-- Add reference to latest jQuery file -->
+  <script>
+    $(document).ready(function(){
+        // esto asigna un evento de cambio a la etiqueta seleccionada
+        /*
+        $("select").change(function(){
+
+          // aquí imprimo la opción seleccionada, capturo lo que hay dinamicamente
+          //console.log("datos capturados", $(this).val() );
+          $("#result").text( $(this).val() ).show().fadeOut(3000);
+          
+          // asi cambio el contenido
+          // $("#prueba").text("<p> cambio el contenido de p </p>");
+        });
+        */
+
+        // reviso el estado de cambio cuando se ingresa un texto
+        // cuando se ingresa texto, capturo ese texto y 
+        // lo muestro en la etiqueta #prueba
+        /*
+        $(":text").change(function(){
+          $("#prueba").text( $(this).val() ).show().fadeOut(2000);
+        });
+        */
+
+        // cuando selecciono el texto del campo input, se me muestra en 
+        // #prueba
+        /*
+        $(":text").select(function(){
+          $("#prueba").text( $(this).val() ).show().fadeOut(3000);
+        });
+        */
+
+        // con esto capuro el option seleccionado
+        // y lo muestro en un alert
+        /*
+        $("form").submit(function(){
+          alert( $("#salutation").val() );
+        });
+        */
+
+        // Con esto caputuro el dato del option
+        // y tambien capturo el dato del input con name fisrt name
+        // y lo muestro en el alert
+        $("form").submit(function(){
+          alert( $("#salutation").val() + ". " + $("[name=FirstName]").val() + " " + $("[name=LastName]").val() );
+        });
+
+    });
+  </script>
+</head>
+<body>
+<form>
+    <fieldset style="width:400px">
+      <legend><b>Personal</b></legend>
+      Salutation:
+      <select id="salutation">
+        <option value="Mr">Mr.</option>      
+        <option value="Miss">Miss.</option>
+        <option value="Ms">Ms.</option>
+        <option value="Mrs">Mrs.</option>
+      </select><br />
+      First Name: <input type="text" name="FirstName"/><br />
+      Last Name: <input type="text" name="LastName"/><br />
+      <input type="submit" id="btnSubmit" value="Submit"/><br />
+      <div id="result">Aqui muestro lo que selecciono en option</div>
+  
+      <div id="prueba">aqui muestro como cambian los nputs</div>
+
+    </fieldset>
+</form>
+</body>
+</html>

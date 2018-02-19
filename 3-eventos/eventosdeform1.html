@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eventos de formulario</title>
+  <script src="jquery-3.3.1.min.js"></script>
+    <style>
+    </style>
+  <!-- Add reference to latest jQuery file -->
+  <script>
+    $(document).ready(function(){
+
+      /*
+      // focus event
+      $(":text").focus(function(){
+        $(this).css("background-color", "gray");
+      });
+
+      // cuando no hay focus, parecido a mouseleave
+      $(":text").blur(function(){
+        $(this).css("background-color", "white");
+      });
+      */
+
+      // pinta todo el campo seleccionado de gris
+      // el efecto se da cuando doy click en un campo input
+      /*
+      $("fieldset").focusin(function(){
+        $(this).css("background-color", "gray");
+      });
+      */
+
+      // funciona al reves, donde doy click fuera del campo
+      // fildset y pinta el campo fielsdet de fris
+      $("fieldset").focusout(function(){
+        $(this).css("background-color", "gray");
+      });
+
+    });
+  </script>
+</head>
+<body>
+<fieldset style="width:200px;">
+    <legend><b>Personal</b></legend>
+    <input type="text" id="firstName" placeholder="First Name" /><br />
+    <input type="text" id="lastName" placeholder="Last Name" /><br />
+    <input type="submit" id="btnSubmit" value="Submit" />
+</fieldset>
+</body>
+</html>

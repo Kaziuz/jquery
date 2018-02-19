@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Añadir Eventos</title>
+  <script src="jquery-3.3.1.min.js"></script>
+    <style>
+    </style>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+        // asi añado un evento
+        /*
+        $("p").on("click", function(){
+          $(this).css("fontSize", "20px");
+        });
+        */
+
+        // asi quito el evento
+        /*
+        $("button").click(function(){
+          $("p").off("click");
+        })
+        */
+
+        // para añadir multiples eventos
+        /*
+        $("p").on({ 
+          click:function(){
+            $(this).css("fontSize", "20px");
+          },
+          dblclick:function(){
+            $(this).css("color", "red");
+          }
+        });
+        */
+
+        // var i = 1;
+
+        // .one se asegura de que el evento se ejecute al menos solo una vez
+        /*
+        $("#btnClick").one("click", function(){
+          $("div").text(i);
+          i++;
+        });
+        */
+
+        // .on siempre se ejecuta el vento cuando sea invocado
+        /*
+        $("#btnClick").on("click", function(){
+          $("div").text(i);
+          i++;
+        });
+        */
+
+        $("p").on("click", function(){
+          $(this).css("background-color", "red");
+        });
+
+        $("p:first").click(function(){
+          $("p:last").trigger("click");
+        });
+    });
+  </script>
+</head>
+<body>
+<div></div>
+<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis praesentium, quae repudiandae hic laborum accusantium eaque non architecto, iure labore, consectetur! Officiis, praesentium. Error repellendus, tenetur veniam aut quibusdam vitae.
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur tempore eos beatae ad ipsa laudantium ab, omnis molestiae at, ipsam, atque obcaecati delectus nihil voluptas blanditiis sit eum eligendi ducimus.</p>
+<button id="btnClick">Click</button>
+</body>
+</html>

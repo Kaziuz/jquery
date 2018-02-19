@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eventos de browser</title>
+  <script src="jquery-3.3.1.min.js"></script>
+    <style>
+    </style>
+  <script>
+    $(document).ready(function(){
+      
+      // evento window
+      // vincula un controlador de eventos a la ventana o al tag que se vincule
+      /*
+      $(window).resize(function(){
+        $("div").text("Width: " + $(window).width() + "Height: " + $(window).height());
+      });
+      */
+
+      // scroll permite capurar siempre que se hace scroll
+      var i = 1;
+
+      $(window).scroll(function(){
+        $("div").text("Scroll: " + i );
+        i++;
+      });
+
+    });
+  </script>
+</head>
+<body>
+<div></div>
+<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis quae id a ad odit pariatur excepturi accusamus unde et, dignissimos velit nulla architecto minima, fugit commodi consequuntur iusto doloremque ipsum.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur ipsa iure mollitia temporibus eligendi quidem. Veniam dolores beatae totam iusto autem sequi hic, quasi explicabo, optio ipsa quo, est perspiciatis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, esse, debitis. Blanditiis aliquam tempora accusantium modi ipsam in porro perferendis, deleniti quos inventore temporibus incidunt, aspernatur quae ullam vero consequuntur?
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi distinctio, iure debitis, odio nulla ab reiciendis odit explicabo, natus facere obcaecati quos non dicta unde nemo officiis. Fugit quas, reprehenderit.</p>
+</body>
+</html>

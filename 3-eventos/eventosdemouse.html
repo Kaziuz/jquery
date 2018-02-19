@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eventos de mouse</title>
+  <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        #box{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            background-color:purple;
+        }
+    </style>
+  <!-- Add reference to latest jQuery file -->
+  <script>
+    $(document).ready(function(){
+
+      //evento click
+      /*
+      $("#box").click(function(){
+        $(this).css("background-color", "pink");
+      });
+      */
+
+      // evento doble click
+      /*
+      $("#box").dblclick(function(){
+        $(this).css("background-color", "pink");
+      });
+      */
+
+      // evento mouse Enter
+      /*
+      $("#box").mouseenter(function(){
+        $(this).css("background-color", "pink");
+      });
+      */
+      
+      // evento mouse sale
+      /*
+      $("#box").mouseleave(function(){
+        $(this).css("background-color", "purple");
+      });
+      */
+
+      // evento hover
+      /*
+      $("#box").hover(function(){
+        $(this).css("background-color", "pink");
+      }, function(){
+        $(this).css("background-color", "purple");
+      });
+      */
+
+      // evento mouse down
+      $("#box").mousedown(function(){
+        $(this).css("background-color", "pink");  
+      });
+
+      // evento mouse Up
+      $("#box").mouseup(function(){
+        $(this).css("background-color", "green");  
+      });     
+        
+       /* 
+      click
+      dblclick
+      mouseenter
+      mouseleave
+      mousedown
+      mouseup
+      */
+
+    });
+  </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

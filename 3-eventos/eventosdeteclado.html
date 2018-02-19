@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eventos de teclado</title>
+  <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        #txtName{
+          font-size:30px;
+        }
+    </style>
+  <!-- Add reference to latest jQuery file -->
+  <script>
+    $(document).ready(function(){
+
+      $("#txtName").keydown(function(){
+        $(this).css("color", "red");
+      });
+
+      $("#txtName").keyup(function(){
+        $(this).css("color", "blue");
+      });
+
+    });
+  </script>
+</head>
+<body>
+    <input type="text" id="txtName" />
+</body>
+</html>
