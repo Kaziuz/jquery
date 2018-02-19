@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>selectores x atributo</title>
+  <meta charset="utf-8">
+  <script src="jquery-3.3.1.min.js"></script>
+  <style>
+    #btnClick{
+    margin-top: 20px;
+  }
+  </style>
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+
+      $("#btnClick").click(function(){
+
+        // seleccionamos todos los elementos con clases
+        //$("[class]").css("color", "red"); 
+
+        // selecionamos todos los elementos que tengan id
+        //$("[id]").css("color", "red"); 
+
+        // otra manera de seleccionar  por id
+        //$("[id=firstDiv]").css("color", "red"); 
+
+        // otra mnera de seleccionar por clase
+        //$("[class=paras]").css("color", "red");
+
+        // seleccioina todas las clases menos paras
+        //$("p[class!=paras]").css("color", "red"); 
+
+
+        //$("[id ^= first]").css("color", "red"); // me selecciona los id que empiecen por first
+        //$("[id $= para]").css("color", "red"); // me selecciona los que terminan con para
+        //$("[id *= first]").css("color", "red"); //Elementos que empiecen por first
+        $("[id ~= first]").css("color", "red"); // Selecciona solo el elemtno que tiene la palabra indicada
+
+        /////////////////////////
+        /*
+
+        Resumen
+
+        [atributo] --> $("[id]")
+
+        [atributo=value] --> $("[id = first]")
+
+        
+
+      });
+    });
+
+  </script>
+</head>
+<body>
+    <p id="first para" class="paras">First Paragraph. First Paragraph.</p>
+    <p id="second-para">Second Paragraph. Second Paragraph.</p>
+    <p id="third-para">Third Paragraph. Third Paragraph.</p>
+    <div id="first">First div</div>
+    <div id="divSecond" class="divs">Second div</div>
+    <div id="divFourth">Fourth div</div>
+    <div id="divFifth" class="divs">Fifth div</div><br />
+    <button id="btnClick">Click!!!</button>
+</body>
+</html>

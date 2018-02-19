@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>selectores</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <style>
+  </style>
+  <!-- Add reference to latest jQuery file -->
+  <script>
+    $(document).ready(function(){
+
+      $("#btn1").click(function(){
+        
+        // selecciona todos los elementos
+        //$("*").css("background-color", "violet"); 
+
+        // selecciona todos los p
+        //$("p").css("background-color", "violet"); 
+
+        // para seleccionar varios elementos
+        //$("ol, p").css("background-color", "red");
+
+        // para seleccionar id
+        // $("#sub1").css("background-color", "red");
+
+        // para seleccionar por clase
+        $(".temas").css("background-color", "green");
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <ol class="temas">
+    <li id="sub1">Ingles</li>
+    <li id="sub2">Matemáticas</li>
+    <li id="sub3">Física</li>
+    <li id="sub4">Química</li>
+    <li id="sub5">Historia</li>
+    <li id="sub6">Geografía</li>
+  </ol>
+  <ul id="departamento">
+    <li>Eventos</li>
+    <li>Hr</li>
+    <li>Marketing</li>
+    <li>Accounts</li>
+  </ul>
+  <p id="primerparra">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos magni veritatis similique dolore autem natus ducimus laboriosam eaque. Quo dolor provident dolore. Quae aspernatur culpa asperiores quod, omnis alias quos.</p>
+  <p id="secondparra">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, eius nobis vitae. Dolor non labore harum praesentium, dolorem hic dolorum recusandae corporis eveniet. Illo, illum? Odit repudiandae, explicabo recusandae? Assumenda.</p>
+  <button id="btn1">primer boton</button>
+  <button id="btn2">segundo botón</button>
+</body>
+</html>

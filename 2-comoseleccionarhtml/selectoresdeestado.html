@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>selectores de estado</title>
+  <meta charset="utf-8">
+  <script src="jquery-3.3.1.min.js"></script>
+  <style>
+      div{
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        margin:5px;
+        padding-right: 5px;
+      }
+  </style>
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+
+      function animar(){
+        $("#box").slideToggle(5000);
+      }
+
+      animar();
+
+      // estoy seleccionando por los divs animados
+      $("#btnClick").click(function(){
+        $("div:animated").css("background-color", "red");
+      });
+    });
+
+  </script>
+</head>
+<body>
+    <!--
+    <label for="name">Name:</label>
+    <input type="text" id="user" /><br />
+    <label for="uName">User Name:</label>
+    <input type="text" id="uName" disabled/><br /> 
+    <input type="text" id="uName" disabled /><br />
+    <label for="pwd"></label>
+    <input type="password" id="pwd" /><br />
+    <label for="gender">Gender:</label>
+    <input type="radio" name="sex" value="m" checked>Male
+    <input type="radio" name="sex" value="f">Female<br />
+    <label for="appliances">Home appliances you own:</label><br />
+    <select name="appliances" multiple="multiple">
+        <option selected>Refrigerator</option>
+        <option>Washing Machine</option>
+        <option>Microwave Oven</option>
+    </select><br />
+    <label for="flower">Which flower you like?</label>
+    <input type="checkbox" name="flower" value="dahlia">Dahlia
+    <input type="checkbox" name="flower" value="tulips" checked>Tulips<br />
+    <input type="reset" value="Reset">
+    -->
+
+    <div></div>
+    <div id="box"></div>
+    <div></div>
+    <button id="btnClick">Submit</button>
+</body>
+</html>

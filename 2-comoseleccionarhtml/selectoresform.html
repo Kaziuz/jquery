@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>selectores para form</title>
+  <meta charset="utf-8">
+  <script src="jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+
+      $("#btnClick").click(function(){
+        
+        // sleccionamos los inputs
+        //alert("Hay " + $(":input").length + " inputs in esta pagina");
+
+        // me selecciona porque tiene atributos type==text en la pagina
+        //alert("Hay " + $(":text").length + " text inputs in esta pagina");
+
+        // me selecciona porque tiene atributos type==pasword en la pagina
+        alert("Hay " + $(":password").length + " text inputs password in esta pagina");
+
+        /* se puede seleccionar por las sigueintes tipos de type
+        :input
+        :text
+        :password
+        :radio
+        :checkbox
+        :file
+        :image
+        :button
+        :reset
+        */
+      });
+    });
+
+  </script>
+</head>
+<body>
+    <label for="name">Name:</label>
+    <input type="text" id="user" /><br />
+    <label for="uName">User Name:</label>
+    <input type="text" id="uName" hidden/><br />
+    <label for="pwd"></label>
+    <input type="password" id="pwd" /><br />
+    <label for="gender">Gender:</label>
+    <input type="radio" name="sex" value="m" checked>Male
+    <input type="radio" name="sex" value="f">Female<br />
+    <label for="appliances">Home appliances you own:</label><br />
+    <select name="appliances" multiple="multiple">
+        <option selected>Refrigerator</option>
+        <option>Washing Machine</option>
+        <option>Microwave Oven</option>
+    </select><br />
+    <label for="flower">Which flower you like?</label>
+    <input type="checkbox" name="flower" value="dahlia">Dahlia
+    <input type="checkbox" name="flower" value="tulips" checked>Tulips<br />
+    <input type="image" src="https://www.bridalguide.com/sites/default/files/slideshow-images/zinnia-katelynjames_1.jpg" width="200px">
+    <input type="image" src="https://www.almanac.com/sites/default/files/users/Almanac%20Staff/daffodil-march_birth_flower-1920x1534px-pixabay_0_full_width.jpg" width="200px"><br />
+    <input type="reset" value="Reset">
+    <button id="btnClick">Submit</button>
+</body>
+</html>

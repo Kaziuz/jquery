@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Propiedades de los elementos</title>
+  <meta charset="utf-8">
+  <script src="jquery-3.3.1.min.js"></script>
+  <style>
+    #btn1{
+    margin-top: 20px;
+  }
+  </style>
+  <script>
+
+    $(document).ready(function(){
+
+      // cuando le doy click al campo
+      $("input").focus(function(){ 
+        $(this).css("background-color", "lightgray");
+      });
+
+      // cuando ya no hay click en el campo
+      $("input").blur(function(){
+        $(this).css("background-color", "white");
+      })
+
+    });
+
+  </script>
+</head>
+<body>
+
+  <label for="pNombre">Primer nombre:</label>
+  <input type="text" id="pNombre" /><br />
+  <label for="sNombre">Segundo nombre:</label>
+  <input type="text" id="sNombre" />
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos adipisci nobis ducimus, impedit officiis sequi magnam quisquam et repellendus ipsam eum iusto eius deserunt mollitia esse, dolores veritatis expedita dolorem?</p>
+
+  <button id="btn1"> primer botón</button>
+
+</body>
+</html>
