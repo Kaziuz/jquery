@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practica</title>
+  <meta charset="utf-8">
+  <script src="jquery-3.3.1.min.js"></script>
+  <style>
+    #btn1{
+    margin-top: 20px;
+  }
+  </style>
+  <!-- Add reference to latest jQuery file -->
+  <script>
+    $(document).ready(function(){
+
+      $("table, tr, th").css("border", "1px dashed black");
+
+      // activa css al presionar botón
+      $("#btn1").click(function(){
+        $(".odd").css("background", "rgb(25, 78, 190)");
+        $(".even").css("background", "rgba(56, 128,134,  .8");
+        $(".cabecera").css("background", "gray");
+        // selecciono el mismo botón
+        $(this).css("background", "green");
+      });
+
+      $("p").hover(function(){
+        $(this).css("color", "red");
+      })
+
+    });
+  </script>
+</head>
+<body>
+  <table>
+    <tr class="cabecera">
+        <th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th>
+    </tr>
+    <tr class="odd">
+        <td>1</td><td>John</td><td>Smith</td><td>johnsmith@abc.com</td>
+    </tr>
+    <tr class="even"> 
+        <td>2</td><td>James</td><td>White</td><td>james.white@test.com</td>
+    </tr>
+    <tr class="odd">
+        <td>3</td><td>Nancy</td><td>Turner</td><td>nancytr@gmail.com</td>
+    </tr>
+    <tr class="even">
+        <td>4</td><td>Joseph</td><td>Allen</td><td>josallen@abc.com</td>
+    </tr>
+    <tr class="odd">
+        <td>5</td><td>Mary</td><td>Brown</td><td>brownmary@yahoo.com</td>
+    </tr>
+  </table>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos adipisci nobis ducimus, impedit officiis sequi magnam quisquam et repellendus ipsam eum iusto eius deserunt mollitia esse, dolores veritatis expedita dolorem?</p>
+
+  <button id="btn1"> primer botón</button>
+
+</body>
+</html>

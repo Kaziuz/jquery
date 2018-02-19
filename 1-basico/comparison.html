@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+       <html>
+       <head>
+           <script src="jquery-3.3.1.min.js"></script>
+           <title>jquery sintax</title>
+           <style>
+                p{
+                    margin:2px;
+                }
+           </style>
+           <script>
+                $(document).ready(function(){
+                    $('blockquote[cite]').each(function() {
+                        $('<p class=ÒreferenceÓ></p>')
+                        .append('<a href="' + $(this).attr('cite') + '">Source</a>')
+                        .appendTo($(this));
+                    });
+                });
+           </script>
+       </head>
+       <body>
+            <blockquote cite="http://www.w3schools.com/tags/ref_canvas.asp">
+               <p>The HTML5 &lt;canvas&gt; tag is used to draw graphics, on the fly, via scripting (usually JavaScript).</p>
+               <p>However, the &lt;canvas&gt; element has no drawing abilities of its own (it is only a container for graphics) - you must use a script to actually draw the graphics.</p>
+               <p>The getContext() method returns an object that provides methods and properties for drawing on the canvas.</p>
+               <p>This reference will cover the properties and methods of the getContext("2d") object, which can be used to draw text, lines, boxes, circles, and more - on the canvas.</p>   </p>
+            </blockquote><br />
+            <blockquote cite="http://googleblog.blogspot.in/2015/09/google-update.html">
+               <p>Today we are introducing a new logo and identity family that reflects this reality and shows you when the Google magic is working for you, even on the tiniest screens.
+               As you will see, we have taken the Google logo and branding, which were originally built for a single desktop browser page,
+               and updated them for a world of seamless computing across an endless number of devices and different kinds of inputs (such as tap, type and talk).</p>
+            </blockquote>
+       </body>
+</html>
