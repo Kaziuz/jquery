@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>animaciones</title>
+  <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        div
+        {
+            width:150px;
+            height:150px;
+            border:2px solid black;
+            margin:10px;
+            padding:10px;
+        }
+    </style>
+  <script>
+
+    function mostrar(){
+      alert("el efecto se completo");
+    };
+
+
+    $(document).ready(function(){
+      
+      $("#btnStart").click(function(){
+        
+        $("div:first").animate({
+          // "height":"height + 50px"
+          // asi para fijar un parametro "height":"50px"
+          // asi para que cada vez que le de al botón se le añade ese valor a la altyra
+          "height":"25px",
+          "width":"25px"   
+        }, 2000);
+
+        $("div:last")
+            .delay(2000).animate({
+          "height":"25px",
+          "width":"50px"   
+        }, 2000);
+
+        /*
+        $("p").animate({ 
+          "wordSpacing": "+=10px",
+          "letterSpacing": "+=25px"
+           }, 5000);
+           */
+      });
+
+      $("#btnStop").click(function(){
+
+        // stop animation
+        $("div").stop();
+      });
+
+    });
+  </script>
+</head>
+<body>
+    <p>Paragraph Paragraph Paragraph Paragraph</p>
+    <div style="background-color:purple;"></div>
+    <div style="background-color:green;"></div><br />
+    <button id="btnStart">Start</button>
+    <button id="btnStop">Stop</button>
+</body>
+</html>

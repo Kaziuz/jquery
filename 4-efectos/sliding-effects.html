@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>animaciones</title>
+  <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        div
+        {
+            width:150px;
+            height:150px;
+            border:2px solid black;
+            margin:10px;
+            padding:10px;
+        }
+    </style>
+  <script>
+
+    function mostrar(){
+      alert("el efecto se completo");
+    };
+
+
+    $(document).ready(function(){
+      
+      $("#btnClick").click(function(){
+        //$("div").slideDown(5000);
+        //$("div").slideToggle(5000);
+        $("div").slideUp(5000);
+      });
+
+    });
+  </script>
+</head>
+<body>
+    <div style="background-color:purple;"></div>
+    <div hidden style="background-color:green;"></div><br />
+    <button id="btnClick">Click</button>
+</body>
+</html>

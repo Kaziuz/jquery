@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Evento callback</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <style>
+    div
+      {
+        width:100px;
+        height:100px;
+        border:2px solid black;
+        background-color:steelblue;
+      }
+  </style>
+  <!-- Add reference to latest jQuery file -->
+  <script>
+
+    function mostrar(){
+      alert("el efecto se completo");
+    };
+
+
+    $(document).ready(function(){
+
+      $("#btnClick").click(function(){
+        // esta es una forma sin callback
+        // $("div").hide(3000);
+
+        // esta es la forma con callback
+        // es mejor trabajar lo asi porque se asegura que cuando se cumpla
+        // el pprimer parametro de hide, siga la función 
+        $("div").hide(3000,mostrar ); 
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <p>FIRST PARAGRAPH FIRST PARAGRAPH</p>
+  <div></div>
+  <button id="btnClick">Click</button>
+</body>
+</html>
