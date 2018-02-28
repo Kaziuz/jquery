@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM manipulation</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <style> 
+    .parent
+      {
+        border:3px solid black;
+        width:150px;
+        height:100px;
+      }
+  </style>
+  <script>
+    $(document).ready(function(){
+      
+      $("#btnClick").click(function(){
+          
+          // este me borra el elemento y su contenido
+          //$(".parent").remove();
+
+          // este me borra el contenido de la etiqueta que seleccione
+          //$(".parent").empty();
+
+          // en remove tambien puedo poner clases para borrar
+          $("div").remove(".child, .otro");
+
+          
+
+      });
+      
+    });
+  </script>
+</head>
+<body>
+<div class="parent">
+    <div>First Item</div>
+    <div class="child">Second Item</div>
+    <div>Third Item</div>
+    <div class="otro">Fourth Item</div>
+</div><br />
+<button type="button" id="btnClick"> Haz click aqui</button>
+</body>
+</html>

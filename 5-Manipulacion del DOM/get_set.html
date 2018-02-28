@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM manipulation</title>
+  <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        div
+        {
+            width:100px;
+            height:100px;
+            border:2px solid black;
+            background-color:pink;
+        }
+    </style>
+  <script>
+    $(document).ready(function(){
+      
+      $("#btnClick").click(function(){
+
+        /*
+            De las siguientes maneras obtenemos html
+        */
+
+        // esto me retorna lo que hay adentro del p
+        //alert( $("p").html() );
+
+        // como la etiquta label tiene dentro otra etiqueta
+        // me retorna el texto de <b> junto con etiqueta
+        // opsea esto <b>First Name:</b>
+        //alert( $("label:First").html() );
+
+        // selecciono el segundo label
+        // alert( $("label:eq(1)").html() );
+
+        /*
+            De las siguientes maneras cambiamos html
+        */
+
+        // de esta manera cambiamos el contenido de una etiqueta
+        // existente
+        //$("label:first").html("<b>Nombre cambiado!</b>");
+
+        // si lo hacemos de esta manera, jquery
+        // eliminara la etiqueta <b> y pondra solo el texto
+        //$("label:first").html("Nombre cambiado!");
+
+        // aqui selecciono el label 0 y luego capturo
+        // lo que esta en el label 1 y lo pongo en el label 0
+        $("label:eq(0)").html( $("label:eq(1)").html() );
+
+
+      });
+      
+
+    });
+  </script>
+</head>
+<body>
+    <h3>Personal Details</h3>
+    <label for="fname"><b>First Name:</b></label><input type="text" id="fname" value="John"/><br />
+    <label for="lname"><b>Last Name:</b></label><input type="text" id="lname" /><br />
+    <p>My Paragraph!!!</p>
+    <div id="result">The Result!!!</div>
+    <input type="button" id="btnClick" value="Click" /><br />
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM manipulation</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <style> 
+  .parent{
+    padding:10px;
+    border:1px solid black;
+  }
+</style>
+  <script>
+    $(document).ready(function(){
+      
+      $("#btnClick").click(function(){
+        
+        // me añade texto a la tag p
+        // siempre la agrega al final
+        //$("p").append(" Good morning !!!");
+
+        // me añade una etiqueta
+        //$(".parent").append("<div>Fourth Item</div>");
+
+        // me alade el contenido despues
+        //$("p").after(" Good morning !!!");
+        //$(".parent").after("<div>Fourth Item</div>");
+
+        // este lo pone al inicio
+        //$("p").prepend(" Good morning !!! ");
+        //$(".parent").prepend("<div>Fourth Item</div>");
+
+        // before funciona parecido al after, añadiendo el conen
+        $("p").before(" Good morning !!! ");
+        $(".parent").before("<div>Fourth Item</div>");
+
+      });
+      
+    });
+  </script>
+</head>
+<body>
+<p>John Smith</p>
+<div class="parent">
+    <div>First Item</div>
+    <div>Second Item</div>
+    <div>Third Item</div>
+</div><br />
+<input type="button" id="btnClick" value="Click" /><br />
+</body>
+</html>

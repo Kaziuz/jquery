@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM manipulation</title>
+  <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        div
+        {
+            width:100px;
+            height:100px;
+            border:2px solid black;
+            background-color:pink;
+        }
+    </style>
+  <script>
+    $(document).ready(function(){
+      
+      $("#btnClick").click(function(){
+        // este se usa para acpturar el value por default que tiene el html
+        //console.log( "El tributo es: " + $("input:first").attr("id") );
+        // este se usa para capturar el estado actual del campo
+        //console.log( "La propiedad es: " + $("input:first").prop("id") );
+
+        $("option:first").attr("id", "Rose");
+        console.log("El id de el primer option es: " + $("option:first").attr("id"));
+
+      });
+      
+    });
+  </script>
+</head>
+<body>
+<h3>Personal Details</h3>
+<label for="fname"><b>First Name:</b></label><input type="text" id="fname" value="John"/><br />
+<label for="lname"><b>Last Name:</b></label><input type="text" id="lname" /><br />
+<label for="flower"><b>Your Favorite Flower:</b></label><br />
+<select id="flower" multiple>
+   <option>Rose</option>
+   <option selected>Tulips</option>
+   <option>Jasmine</option>
+</select><br />
+<input type="button" id="btnClick" value="Click" /><br />
+</body>
+</html>
