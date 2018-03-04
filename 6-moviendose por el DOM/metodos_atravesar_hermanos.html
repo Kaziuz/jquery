@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Atravesando el DOM</title>
+  <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        .cell {
+            height: 50px;
+            width: 100px;
+            text-align: center;
+            border:2px dotted gray;
+        }
+        .row
+        {
+            outline:green solid medium;
+        }
+        table
+        {
+            border:3px solid blue;
+        }
+        *
+        {
+            margin:10px;
+            padding:10px;
+        }
+   </style>
+  <script>
+    $(document).ready(function(){
+      
+      $("#btnClick").click(function(){
+        // siblings() seleciona los hermanos del target
+        // en este caso r1c1, r1c3 y r1c4 se les aplica un outline rojo
+        //$("#r1c2").siblings().css("outline", "red solid thick");
+
+        // en este caso se selecciona el anterior a id = row3
+        //$("#row3").prev().css("outline", "red solid thick");
+
+        // este me seleciona todo lo anterior a id r2c4
+        //$("#r2c4").prevAll().css("outline", "red solid thick");
+
+        // me selecciona los hermanos que esten entre el primer id y el otro que esta en preUntil()
+        //$("#r2c4").prevUntil("#r2c1").css("outline", "red solid thick");
+
+        // este me selecciona el siguiente
+        //$("#r2c2").next().css("outline", "red solid thick");
+
+        // este método me selecciona todo lo siguiente a la etiqueta 
+        // aplica un otline rojo a r2c3 y r2c4 
+        //$("#r2c2").nextAll().css("outline", "red solid thick");
+
+        // este método es lo contrario a prevUntil, este selecciona
+        // todo lo siguiente a r2c2 y que este entre r2c4
+        $("#r2c2").nextUntil("#r2c4").css("outline", "red solid thick");
+      });
+      
+    });
+  </script>
+</head>
+<body>
+    <table id="mytable">
+        <tr id="row1" class="row">
+            <td id="r1c1" class="cell">Row1 Cell1</td>
+            <td id="r1c2" class="cell">Row1 Cell2</td>
+            <td id="r1c3" class="cell">Row1 Cell3</td>
+            <td id="r1c4" class="cell">Row1 Cell4</td>
+        </tr>
+        <tr id="row2" class="row">
+            <td id="r2c1" class="cell">Row2 Cell1</td>
+            <td id="r2c2" class="cell">Row2 Cell2</td>
+            <td id="r2c3" class="cell">Row2 Cell3</td>
+            <td id="r2c4" class="cell">Row2 Cell4</td>
+        </tr>
+        <tr id="row3" class="row">
+            <td id="r3c1" class="cell">Row3 Cell1</td>
+            <td id="r3c2" class="cell">Row3 Cell2</td>
+            <td id="r3c3" class="cell">Row3 Cell3</td>
+            <td id="r3c4" class="cell">Row3 Cell4</td>
+        </tr>
+        <tr id="row4" class="row">
+            <td id="r4c1" class="cell">Row4 Cell1</td>
+            <td id="r4c2" class="cell">Row4 Cell2</td>
+            <td id="r4c3" class="cell">Row4 Cell3</td>
+            <td id="r4c4" class="cell">Row4 Cell4</td>
+        </tr>
+    </table><br />
+    <button id="btnClick">Click!!!</button>
+</body>
+</html>
