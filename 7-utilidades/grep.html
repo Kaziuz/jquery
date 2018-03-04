@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Utility Function: $.grep()</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <style></style>
+  <script>
+    $(document).ready(function(){
+
+        var diasSemana = ["Sunday", "Monday","Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
+
+        //////////////////////////////////////////////////
+        // creamos un nuevo array con la utilidad grep ///
+        // por lo general viene con false.             ///
+        // si la uso como esta de esta manera          ///
+        // me seleccionará los diferentes              ///
+        // dias de la semana que empiezen con T        ///
+        //////////////////////////////////////////////////
+
+        /*
+        var newArr = $.grep(diasSemana, function(item, index){
+          return (item.charAt(0) == "T")
+        }, true);
+        */
+
+        ///////////////////////////////////////////
+        // si lo hago de esta manera se           
+        // eleccionaran solo los dias que empiezen 
+        // con la lettra T
+        ////////////////////////////////////////////
+
+        /*
+        var newArr = $.grep(diasSemana, function(item, index){
+          return (item.charAt(0) == "T")
+        });
+        */
+
+        ////////////////////////////////////////////
+        // otra manera para filtrar
+        // esto solo me filtra el dia último y primero
+        ////////////////////////////////////////////
+
+        /*
+        var newArr = $.grep(diasSemana, function(item, index){
+          return (index > 0 && index < 6)
+        }, true);
+        */
+
+        /*
+        var newArr = $.grep(diasSemana, function(item, index){
+          return (index > 0 && index < 6)
+        });
+        */
+        
+        $("#result").html("Current array: " + diasSemana + "<br /> New Array: " + newArr );
+    
+    });
+  </script>
+</head>
+<body>
+   <div id="result"></div>
+</body>
+</html>

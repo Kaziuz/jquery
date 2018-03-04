@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Utility Function: $.inArray()</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <style></style>
+  <script>
+    $(document).ready(function(){
+        var myNames = ["Aaron", "Sarah", "Rose", "Abel", "Dina", "John"];
+
+        // esto me devuelve el indice de Abel en el array.
+        // con la función $.inArray es para recorrer un array 
+        //$("#result").html("the index of Abel is " + $.inArray("John", myNames));
+
+        $("#result").html("the index of Aaron is " + $.inArray("Aaron", myNames, 1));
+      
+    });
+  </script>
+</head>
+<body>
+   <div id="result"></div>
+</body>
+</html>

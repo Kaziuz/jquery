@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Utility Function: $.map()</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <style></style>
+  <script>
+    $(document).ready(function(){
+
+      ///////////////////////////////////
+      // $.map permite procesar 
+      // un array y crear un nuevo array 
+      // a partir del otro
+      ///////////////////////////////////
+
+      
+      /*
+      var myArr = [1, 2, 3, 4, 5, 6];
+      
+      var newArr = $.map(myArr, function(item, index){
+          //return (Math.pow(item, 2));
+          return (Math.pow(item, 2) + index);
+      });
+
+      $("#result").html("Array actúal: " + myArr + "<br />Nuevo Array: " + newArr);
+      */
+
+      var myArr = ["abel", "sarah", "aaron", "rose", "john", "Alex"];
+      
+      var newArr = $.map(myArr, function(item, index){
+          // toUpperCase método de string para convertirlas a mayúsculas 
+          return ( (index+1) + " : " + item.toUpperCase() );
+      });
+
+      // join metodo de arrays para darles formato
+      $("#result").html("Array actúal: <br />" + myArr.join("<br />") + "<br />Nuevo Array: <br />" + newArr.join("<br />"));
+    
+    });
+  </script>
+</head>
+<body>
+   <div id="result"></div>
+</body>
+</html>

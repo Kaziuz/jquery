@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>$.each() Method</title>
+  <script src="jquery-3.3.1.min.js"></script>
+  <style></style>
+  <script>
+    $(document).ready(function(){
+
+      var namesArr = ["Aaron", "Ann", "Aidan", "Sarah", "Abel"];
+      
+      var numberObj = {
+        a:1,
+        b:10,
+        c:100,
+        d:1000
+      }
+
+      var sum = 0;
+      
+      ///////////////////////////////////////////////// 
+      //// cuando el .each() se usa de esta manera //// 
+      //// sirve para procesar datos como arrays que //
+      //// estan en variables /////////////////////////
+      /////////////////////////////////////////////////
+
+      /*
+      $.each(numberObj, function(index, value){
+        //alert(index + " : " + value);
+        //$("#result").append(index + " : " + value + "<br />");
+
+        // sum += value;
+        //$("#result").html(sum);
+        $("#result").append(index + " : " + value + "<br />");
+      });
+      */
+
+      /////////////////////////////////////////////////
+      // Cuando se quiere recorrer etiquetas html /////
+      // se usa de esta otra forma ////////////////////
+      /////////////////////////////////////////////////
+
+      /*
+      $("li").each(function(index, value){
+        // en este caso, $(this).text() hace referencia al value de la funcion, no al #result
+        //$("#result").append(index + " : " + $(this).text() + "<br />");
+        // ya que si lo hacemos asi
+        // $("#result").append(index + " : " + value + "<br />");
+        // el dom nos pintara [object HTMLLIElement]
+      });
+      */
+
+      $("div").each(function(index, value){
+        $("#result").append(index + " : " + $(this).attr("id") + "<br />");
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <ul>
+    <li>Jasmine</li>
+    <li>Rose</li>
+    <li>Lotus</li>
+    <li>Tulips</li>
+  </ul>
+<div id="test"></div>
+<div id="result"></div>
+
+</body>
+</html>
