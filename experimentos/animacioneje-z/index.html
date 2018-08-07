@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="estilos.css" type="text/css">
+	<title>animation jquery</title>
+
+</head>
+<body class="container animated fadeIn">
+	<div class="row">
+		<div class="col-md-10">
+			<div class="contienecartas">
+				<div class="carta" id="carta1"><p>Carta 1</p></div>
+				<div class="carta" id="carta2"><p>Carta 2</p></div>
+				<div class="carta" id="carta3"><p>Carta 3</p></div>
+				<div class="carta" id="carta4"><p>Carta 4</p></div>
+			</div>
+		</div>
+		<div class="col-md-2">
+			<div class="menu">
+				<div class="menusi" id="mcar1">Carta 1</div>
+				<div class="menusi" id="mcar2">Carta 2</div>
+				<div class="menusi" id="mcar3">Carta 3</div>
+				<div class="menusi" id="mcar4">Carta 4</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+	$(document).ready(function(){
+		
+		var animacion = 'animated slideOutUp';
+
+		$('#mcar1').click(function(){
+
+			$('#carta1').css('z-index','0');
+			$('#carta2').css('z-index','0');
+			$('#carta3').css('z-index','0');
+			$('#carta4').css('z-index','0');
+
+			// para animar transforms
+			$('#carta1').animate({ textIndent: 20 }, 
+			{
+				step: function(go) 
+				{
+				  $(this).css('-moz-transform','rotate('+go+'deg)');
+			      $(this).css('-webkit-transform','rotate('+go+'deg)');
+			      $(this).css('-o-transform','rotate('+go+'deg)');
+			      $(this).css('transform','rotate('+go+'deg)');
+				},
+				duration: 600 * 0.5, // se completa el inicio
+				complete: function()
+				{ 
+					$('#carta1').animate({ textIndent: 0 }, 
+					{
+						step: function(go) {
+						  $(this).css('-moz-transform','rotate('+go+'deg)');
+					      $(this).css('-webkit-transform','rotate('+go+'deg)');
+					      $(this).css('-o-transform','rotate('+go+'deg)');
+					      $(this).css('transform','rotate('+go+'deg)');
+						},
+						duration: 600 * 0.5, // se completa el final
+					}).css('z-index','400');
+				}
+			});
+			
+		});
+
+		$('#mcar2').click(function(){
+
+			$('#carta1').css('z-index','0');
+			$('#carta2').css('z-index','0');
+			$('#carta3').css('z-index','0');
+			$('#carta4').css('z-index','0');
+
+			$('#carta2').animate({ textIndent: 20 }, 
+			{
+				step: function(go) 
+				{
+				  $(this).css('-moz-transform','rotate('+go+'deg)');
+			      $(this).css('-webkit-transform','rotate('+go+'deg)');
+			      $(this).css('-o-transform','rotate('+go+'deg)');
+			      $(this).css('transform','rotate('+go+'deg)');
+				},
+				duration: 600 * 0.5, // se completa el inicio
+				complete: function()
+				{ 
+					$('#carta2').animate({ textIndent: 0 }, 
+					{
+						step: function(go) {
+						  $(this).css('-moz-transform','rotate('+go+'deg)');
+					      $(this).css('-webkit-transform','rotate('+go+'deg)');
+					      $(this).css('-o-transform','rotate('+go+'deg)');
+					      $(this).css('transform','rotate('+go+'deg)');
+						},
+						duration: 600 * 0.5, // se completa el final
+					}).css('z-index','400');
+				}
+			});
+			
+		});
+
+
+		$('#mcar3').click(function(){
+
+			$('#carta1').css('z-index','0');
+			$('#carta2').css('z-index','0');
+			$('#carta3').css('z-index','0');
+			$('#carta4').css('z-index','0');
+
+			$('#carta3').animate({ textIndent: 20 }, 
+			{
+				step: function(go) 
+				{
+				  $(this).css('-moz-transform','rotate('+go+'deg)');
+			      $(this).css('-webkit-transform','rotate('+go+'deg)');
+			      $(this).css('-o-transform','rotate('+go+'deg)');
+			      $(this).css('transform','rotate('+go+'deg)');
+				},
+				duration: 600 * 0.5, // se completa el inicio
+				complete: function()
+				{ 
+					$('#carta3').animate({ textIndent: 0 }, 
+					{
+						step: function(go) {
+						  $(this).css('-moz-transform','rotate('+go+'deg)');
+					      $(this).css('-webkit-transform','rotate('+go+'deg)');
+					      $(this).css('-o-transform','rotate('+go+'deg)');
+					      $(this).css('transform','rotate('+go+'deg)');
+						},
+						duration: 600 * 0.5, // se completa el final
+					}).css('z-index','400');
+				}
+			});
+		});
+
+
+		$('#mcar4').click(function(){
+		
+			$('#carta1').css('z-index','300');
+			$('#carta2').css('z-index','200');
+			$('#carta3').css('z-index','100');
+
+			$('#carta4').animate({ textIndent: 20 }, 
+			{
+				step: function(go) 
+				{
+				  $(this).css('-moz-transform','rotate('+go+'deg)');
+			      $(this).css('-webkit-transform','rotate('+go+'deg)');
+			      $(this).css('-o-transform','rotate('+go+'deg)');
+			      $(this).css('transform','rotate('+go+'deg)');
+				},
+				duration: 600 * 0.5, // se completa el inicio
+				complete: function()
+				{ 
+					$('#carta4').animate({ textIndent: 0 }, 
+					{
+						step: function(go) {
+						  $(this).css('-moz-transform','rotate('+go+'deg)');
+					      $(this).css('-webkit-transform','rotate('+go+'deg)');
+					      $(this).css('-o-transform','rotate('+go+'deg)');
+					      $(this).css('transform','rotate('+go+'deg)');
+						},
+						duration: 600 * 0.5, // se completa el final
+					}).css('z-index','400');
+				}
+			});
+		});
+
+	});
+
+</script>
+</body>
+</html>
